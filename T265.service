@@ -1,0 +1,13 @@
+[Unit]
+Description=T265 device
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/python3 /home/nvidia/myjetson/t265dev/test.py
+Environment=PYTHONPATH=$PYTHONPATH:/usr/local/lib:/usr/local/lib/python3.6/pyrealsense2:/home/nvidia/.local/lib/python3.6/site-packages
+
+[Install]
+WantedBy=multi-user.target
+

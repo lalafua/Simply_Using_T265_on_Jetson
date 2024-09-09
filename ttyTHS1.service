@@ -1,0 +1,13 @@
+[Unit]
+Description=Set permissions for /dev/ttyTHS1
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=always
+User=root
+Group=root
+ExecStart=/bin/bash -c 'while true; do chmod 777 /dev/ttyTHS1; sleep 1; done'
+
+[Install]
+WantedBy=multi-user.target
